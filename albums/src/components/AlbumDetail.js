@@ -5,6 +5,7 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
+  //decompose all variables to make it easier to read. album.title, album.artist...
   const { title, artist, thumbnail_image, image, url } = album;
   const {
     thumbnailStyle,
@@ -14,6 +15,7 @@ const AlbumDetail = ({ album }) => {
     imageStyle
   } = styles;
 
+//if albumdetail is called then this is returned 
   return (
     <Card>
       <CardSection>
