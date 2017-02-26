@@ -1,6 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
+//In JSX expressions that contain both an opening tag and a closing tag,
+//the content between those tags is passed as a special prop: props.children.
+//There are several different ways to pass children.
+//see: https://facebook.github.io/react/docs/jsx-in-depth.html
+
 const Card = (props) => {
   return (
     <View style={styles.containerStyle}>
