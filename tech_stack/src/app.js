@@ -6,6 +6,9 @@ import reducers from './reducers';
 import { Header } from './components/common';
 import LibraryList from './components/LibraryList';
 
+//pretty much same as before, only that now all is wrapped in a Provider,
+//component that is imported from react-redux, which is the "bridge" between
+//react and redux.  createStore can then be called from redux, calling reducers
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>

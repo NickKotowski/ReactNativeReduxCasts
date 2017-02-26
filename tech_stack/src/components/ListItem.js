@@ -9,6 +9,9 @@ import { connect } from 'react-redux';
 import { CardSection } from './common';
 import * as actions from '../actions';
 
+//last import takes all actions of the index.js file in that folder
+//connect helper is called from react-redux as step two
+
 class ListItem extends Component {
   componentWillUpdate() {
     LayoutAnimation.spring();
@@ -35,6 +38,7 @@ class ListItem extends Component {
     return (
       <TouchableWithoutFeedback
         onPress={() => this.props.selectLibrary(id)}
+        //onPress calls the action creator with the this.props.library.id
       >
         <View>
           <CardSection>
@@ -67,3 +71,5 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 export default connect(mapStateToProps, actions)(ListItem);
+
+//connect modifies what we pass to ListItem as props
