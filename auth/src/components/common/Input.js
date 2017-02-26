@@ -4,6 +4,8 @@ import { TextInput, View, Text } from 'react-native';
 const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   const { inputStyle, labelStyle, containerStyle } = styles;
 
+//Input field has many probs, label (like in html), secureTextEntry = password style
+
   return (
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
