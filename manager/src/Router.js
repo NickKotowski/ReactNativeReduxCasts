@@ -5,6 +5,12 @@ import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
 
+//uses scene from react native router flux (navigation component)
+//scenes are "put into buckets" - means only between them the user can nagivate
+//back and forth
+//each scene needs a key, component, title, and initial (if its the scene that should be shown first)
+//actions from router flux means the user is taken to the scene with that key
+
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>

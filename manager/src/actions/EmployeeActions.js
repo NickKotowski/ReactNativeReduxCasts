@@ -7,6 +7,7 @@ import {
   EMPLOYEE_SAVE_SUCCESS
 } from './types';
 
+//update the information of the employee, returns payload of the prop and value
 export const employeeUpdate = ({ prop, value }) => {
   return {
     type: EMPLOYEE_UPDATE,
@@ -14,6 +15,7 @@ export const employeeUpdate = ({ prop, value }) => {
   };
 };
 
+//create a new employee
 export const employeeCreate = ({ name, phone, shift }) => {
   const { currentUser } = firebase.auth();
 
@@ -23,6 +25,7 @@ export const employeeCreate = ({ name, phone, shift }) => {
       .then(() => {
         dispatch({ type: EMPLOYEE_CREATE });
         Actions.employeeList({ type: 'reset' });
+        //calls screen employeeList without the back button
       });
   };
 };
@@ -56,6 +59,7 @@ export const employeeDelete = ({ uid }) => {
 
   return () => {
     firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+    //es6 style template string (?)
       .remove()
       .then(() => {
         Actions.employeeList({ type: 'reset' });

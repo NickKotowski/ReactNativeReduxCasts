@@ -20,8 +20,10 @@ class App extends Component {
   }
 
   render() {
+    //reduxThink = asynchronis data fetching
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
+    //all that is called is the prodvider (react-redux), see file Router
     return (
       <Provider store={store}>
         <Router />
