@@ -13,7 +13,9 @@ const INITIAL_STATE = {
   error: '',
   loading: false
 };
-
+//initial state is INITIAL_STATE if no other value is given, and action is loaded in as well
+//the action.type is then looked at, and the action.payload changed (in most cases, or boolean variable
+//changed, error message deleted)
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMAIL_CHANGED:
